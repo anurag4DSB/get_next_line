@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amittal  <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amittal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/18 08:15:30 by amittal           #+#    #+#             */
 /*   Updated: 2017/06/21 19:10:30 by amittal          ###   ########.fr       */

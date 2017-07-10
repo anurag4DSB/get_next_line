@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wordchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amittal  <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amittal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/01 16:21:20 by amittal           #+#    #+#             */
 /*   Updated: 2017/07/03 01:15:07 by amittal          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amittal  <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amittal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/01 16:06:37 by amittal           #+#    #+#             */
 /*   Updated: 2017/07/01 16:06:37 by amittal          ###   ########.fr       */

@@ -10,34 +10,80 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "get_next_line.h"
 
-int					get_next_line(const int fd, char **line)
+static int		ft_fdcmp(t_save *a, int *b)
 {
-	static size_t	i;
-	int				*buf;
-	char			buffer[BUFF_SIZE + 1];
+	return (a->fd - *b);
+}
 
+static void		ft_gnlfree(void *a, size_t size)
+{
+	(void)size;
+	ft_strdel(&((t_save*)a)->str);
+	free(a);
+}
 
-	if (!(*line = ft_memalloc(BUFF_SIZE + 1)))
-		return (-1);
-	//*line[0] = '\0';
-	while(read(fd, buffer, BUFF_SIZE) > 0)
+static t_list	*ft_newfd(t_list **head, int fd)
+{
+	t_save		new;
+
+	new.fd = fd;
+	new.str = ft_memalloc((BUFF_SIZE > 0 ? BUFF_SIZE : 0) + 1);
+	ft_lstadd(head, ft_lstnew(&new, sizeof(t_save)));
+	return (*head);
+}
+
+static int		ft_loop_read(int fd, char **line, char *save)
+{
+	char	buf[BUFF_SIZE + 1];
+	char	*pos;
+	char	*tmp;
+	int		ret;
+
+	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
-		i = 0;
-		while (i <= BUFF_SIZE)
+		buf[ret] = 0;
+		tmp = *line; //////dfdsfsdfsdfsdfsdfsdfds
+		if ((pos = ft_strchr(buf, '\n')))
 		{
-			ft_strncat(*line, buffer, 1);
-			if (buffer[0] == '\n')
-				return(1);
-			i++;
+			ft_strcpy(save, pos + 1);
+			*pos = 0;
 		}
-		{
-			if (!(*line = realloc(*line, BUFFSIZE)))
-				return(-1);
-			ft_strncat(*line, buffer, BUFF_SIZE);
-		}
+		if (!(*line = ft_strjoin(*line, buf)))
+			return (-1);
+		ft_strdel(&tmp);
+		if (pos)
+			return (1);
 	}
-	return (0);
+	if (ret < 0)
+		return (-1);
+	return (**line ? 1 : 0);
+}
+
+int				get_next_line(int const fd, char **line)
+{
+	static t_list	*head;
+	t_list			*tmp;
+	char			*pos;
+	char			*save;
+	int				ret;
+
+	if (fd < 0 || !line)
+		return (-1);
+	if (!(tmp = ft_lst_find(head, (void *)&fd, &ft_fdcmp)))
+		tmp = ft_newfd(&head, fd);
+	save = ((t_save*)tmp->content)->str;
+	if (!(*line = ft_strdup(save)))
+		return (-1);
+	ft_bzero(save, BUFF_SIZE + 1);
+	if ((pos = ft_strchr(*line, '\n')))
+	{
+		ft_strcpy(save, pos + 1);
+		*pos = 0;
+		return (1);
+	}
+	if (!(ret = ft_loop_read(fd, line, save)))
+		ft_lst_delif(&head, (int *)&fd, ft_fdcmp, &ft_gnlfree);
+	return (ret);
 }

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_word_length.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amittal  <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amittal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/18 20:24:36 by amittal           #+#    #+#             */
 /*   Updated: 2017/06/26 04:43:39 by amittal          ###   ########.fr       */

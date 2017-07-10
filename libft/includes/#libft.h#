@@ -124,10 +124,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstrev(t_list **begin_list);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_lstevery(t_list *lst, int (*f)(t_list *elem));
-t_list				*ft_lst_find(t_list *begin_list, void *data_ref,
-								int (*cmp)());
-void				ft_lst_delif(t_list **alst, void *data_ref, int (*cmp)(),
-								void (*del)(void *, size_t));
 size_t				ft_count_digits(int value);
 char const			*ft_next_word(char const *str, char delim);
 char				*ft_word_copy(char *dest, char const *src, char delim);

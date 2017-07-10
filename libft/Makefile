@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amittal  <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: amittal <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/20 19:35:21 by amittal           #+#    #+#              #
 #    Updated: 2017/07/01 23:07:12 by amittal          ###   ########.fr        #
